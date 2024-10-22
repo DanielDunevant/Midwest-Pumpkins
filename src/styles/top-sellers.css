@@ -1,11 +1,4 @@
-body {
-  font-family: var(--secondary-text-font);
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-}
-
-.top-sellers {
+#top-sellers {
   width: auto;
   padding: 3rem;
   box-sizing: border-box;
@@ -56,6 +49,10 @@ body {
   margin-right: 1rem;
 }
 
+body.dark-mode .dark-mode-text {
+  color: var(--white-color);
+}
+
 .buy-now {
   margin-top: 0.89%;
   background-color: var(--main-color);
@@ -68,6 +65,11 @@ body {
   cursor: pointer;
   text-transform: capitalize;
   white-space: nowrap;
+  transition: var(--transition);
+}
+
+.buy-now:hover {
+  background-color: var(--main-color-hover);
 }
 
 @media (max-width: 768px) {

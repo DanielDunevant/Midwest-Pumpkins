@@ -14,7 +14,11 @@
   flex-wrap: wrap;
 }
 
-.features-flex-container > div {
+body.dark-mode .dark-mode-text {
+  color: var(--white-color);
+}
+
+.features-flex-container>div {
   margin: 28px;
   border-radius: 15px;
   flex-grow: 1;
@@ -25,7 +29,7 @@
 }
 
 @media (max-width: 500px) {
-  .features-flex-container > div {
+  .features-flex-container>div {
     min-width: 300px;
   }
 }
