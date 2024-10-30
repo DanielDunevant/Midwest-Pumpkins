@@ -17,17 +17,23 @@ document.getElementById("buyForm").addEventListener("submit", function (event) {
 
 // Get the popup and the button that opens it
 const openButton = document.getElementById("buyNowButton");
-const modal = document.querySelector(".buy-now-modal");
+const modal = document.querySelector(".modal-container");
+const closeModalButton = document.querySelector(".close-button");
 
 openButton.addEventListener("click", function () {
-  document.querySelector(".buy-now-modal").style.display = "block";
+  document.querySelector(".modal-container").style.display = "flex";
 });
 
-document.addEventListener("click", function (event) {
-  const isClickInside =
-    modal.contains(event.target) || openButton.contains(event.target);
+function closeModal() {
+  modal.style.display = "none";
+}
 
-  if (!isClickInside) {
-    modal.style.display = "none"; // Close the popup
+if (closeModalButton) {
+  closeModalButton.addEventListener("click", closeModal);
+}
+
+modal.addEventListener("click", function (event) {
+  if (event.target === modal) {
+    closeModal();
   }
 });

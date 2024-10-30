@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("subscribeForm")
     .addEventListener("submit", function (event) {
       event.preventDefault();
+      
       Swal.fire({
         icon: "success",
         title: "Thank you for subscribing! Stay tuned for updates!",
@@ -46,9 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function keyCode(event) {
-  const modal = document.getElementById("close-subscribe-modal");
+  const modal = document.getElementById("subscribeModal");
   const x = event.keyCode;
   if (x == 27) {
-    modal.style.display = "none";
+    modal.classList.remove("show"); // Close the modal after submission
   }
 }
